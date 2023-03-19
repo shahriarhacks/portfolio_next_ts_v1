@@ -1,4 +1,4 @@
-import BackgroundCircle from "@/pages/BackgroundCircle";
+import BackgroundCircle from "@/components/BackgroundCircle";
 import React from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import Image from "next/image";
