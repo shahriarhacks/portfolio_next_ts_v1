@@ -10,7 +10,7 @@ const Hero = (props: Props) => {
   const [text, count] = useTypewriter({
     words: [
       "Hi, I am SHAHRIAR AHMED",
-      "<Coding_Reading_Typing_Research/>",
+      "<CodingReadingTypingResearch/>",
       "Eat-Sleep-Code-Repeat.tsx",
     ],
     loop: true,
@@ -24,7 +24,7 @@ const Hero = (props: Props) => {
         alt="SHAHRIAR AHMED"
         width={100}
         height={100}
-        className="rounded-full relative mx-auto h-32 w-32"
+        className="rounded-full relative mx-auto h-32 w-32 object-cover"
       />
       <div className="z-20">
         <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">
