@@ -19,13 +19,13 @@ const Header = (props: Props) => {
         className="flex flex-row items-center"
       >
         {/* Social Icons */}
-        {/* <SocialIcon
-          url="https://www.github.com/shahriar7ahmed"
+        <SocialIcon
+          url="https://www.github.com/shahriar0ahmed"
           fgColor="gray"
           bgColor="transparent"
-        />{" "} */}
+        />{" "}
         <SocialIcon
-          url="https://www.linkedin.com/in/shahriar7ahmed"
+          url="https://www.linkedin.com/in/shahriar0ahmed"
           fgColor="gray"
           bgColor="transparent"
         />
@@ -40,17 +40,17 @@ const Header = (props: Props) => {
           bgColor="transparent"
         />{" "} */}
         <SocialIcon
-          url="https://www.facebook.com/shifat.talukd"
+          url="https://www.facebook.com/shahriar0ahmed"
           fgColor="gray"
           bgColor="transparent"
         />
-        <SocialIcon
+        {/* <SocialIcon
           url="https://www.twitter.com/shahriar7ahmed"
           fgColor="gray"
           bgColor="transparent"
-        />
+        /> */}
         <SocialIcon
-          url="https://www.instagram.com/shahriar7ahmed"
+          url="https://www.instagram.com/shahriar0ahmed"
           fgColor="gray"
           bgColor="transparent"
         />

@@ -50,7 +50,7 @@ export default function Home() {
 
       {/* Skills Start */}
 
-      <section id="skills" className="snap-center">
+      <section id="skills" className="snap-start">
         <MySkills />
       </section>
 
@@ -58,7 +58,7 @@ export default function Home() {
 
       {/* Projects Start*/}
 
-      <section id="projects" className="snap-center">
+      <section id="projects" className="snap-start">
         <Projects />
       </section>
 
