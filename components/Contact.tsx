@@ -1,9 +1,22 @@
 import Link from "next/link";
 import React from "react";
+import { useForm, SubmitHandler } from "react-hook-form";
 
+type Inputs = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+};
 type Props = {};
 
 const Contact = (props: Props) => {
+  const { register, handleSubmit } = useForm<Inputs>();
+  const onSubmit: SubmitHandler<Inputs> = (formData) => {
+    window.location.href = `mailto:shahriar7ahmed@gmail.com?subject=${formData.subject}&body=Hi My name is ${formData.name} I want to ${formData.message}.
+    Please contact with me ${formData.email}`;
+  };
+
   return (
     <div className="h-screen flex flex-col relative text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center">
       <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
@@ -65,28 +78,34 @@ const Contact = (props: Props) => {
           </svg>
           <p className="text-xl text-gray-300">Pirganj, Rangpur, BD -5470</p>
         </div>
-        <form className="flex flex-col space-y-2 w-fit mx-auto my-4">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="flex flex-col space-y-2 w-fit mx-auto my-4 py-12 lg:py-0"
+        >
           <div className="flex space-x-2">
             <input
+              {...register("name")}
               placeholder="Name"
               className="contactInput focus:border-lime-500/50 hover:border-lime-300/50 focus:text-green-500/70"
               type="text"
             />
             <input
+              {...register("email")}
               placeholder="Email"
               className="contactInput focus:border-lime-500/50 hover:border-lime-300/50 focus:text-green-500/70"
-              type="text"
+              type="email"
             />
           </div>
           <input
+            {...register("subject")}
             placeholder="Subject"
             className="contactInput focus:border-lime-500/50 hover:border-lime-300/50 focus:text-green-500/70"
             type="text"
           />
           <textarea
+            {...register("message")}
             placeholder="Message"
             className=" contactInput px-8 py-6 focus:border-lime-500/50 hover:border-lime-300/50 focus:text-green-500/70"
-            name=""
           />
           <button
             type="submit"
