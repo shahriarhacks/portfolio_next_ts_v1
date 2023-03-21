@@ -43,7 +43,7 @@ const Hero = (props: Props) => {
               About
             </button>
           </Link>
-          <Link href="#experience" className="cursor-pointer">
+          <Link href="#experiences" className="cursor-pointer">
             <button className="hero-btn hover:border-[#F7AB0A]/40 hover:text-[#F7AB0A]/30">
               Experience
             </button>

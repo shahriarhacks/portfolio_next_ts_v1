@@ -42,7 +42,7 @@ export default function Home() {
 
       {/* Experience Start */}
 
-      <section id="experience" className="snap-center">
+      <section id="experiences" className="snap-center">
         <Experience />
       </section>
 
