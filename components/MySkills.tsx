@@ -18,11 +18,11 @@ const MySkills = (props: Props) => {
       <h3 className="absolute top-36 uppercase tracking-[3px] text-gray-500 text-sm mb-0 xl:mb-8">
         Hover over a skill to see the current proficiency
       </h3>
-      <div className="grid lg:grid-cols-6 grid-cols-3 gap-7">
-        {/* <Skills />
+      <div className="grid lg:grid-cols-6 grid-cols-3 gap-4">
         <Skills />
         <Skills />
-        <Skills /> */}
+        <Skills />
+        <Skills />
         <Skills />
         <Skills />
         <Skills />
