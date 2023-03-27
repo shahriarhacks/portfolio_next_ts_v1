@@ -1,15 +1,17 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { PageInfo } from "@/typings";
+import { urlFor } from "@/sanity";
 // import Image from "next/image";
 
-type Props = {};
+type Props = { pageInfo: PageInfo };
 const des =
   "Hi, That's me, SHAHRIAR AHMED. I'm known as Shifat to everyone. At 18 years old, I am a young man. I'm from Bangladesh's Rangpur District and Division. I am a Computer Science and Technology student and also a Full Stack Developer. I've been programming for more than two years.";
 const des2 =
   "I enjoy the programming industry for a good reason. Programming languages are continually being discovered. I enjoy picking up new coding skills and technologies. I'd like to work with backend technologies because I find them to be quite appealing and would like learning and working with them.";
 const des3 =
   "I want to employ machine learning (ML), deep learning (DL), and neural networks (NN) to further my work in artificial intelligence (AI) and data science (DS). I'm learning Python tools like NumPy, Pandas, Scikit-Learn, NLTK, Keras, and PyTorch for this, and I'm also looking into Julia for potential future work.";
-const About = (props: Props) => {
+const About = ({ pageInfo }: Props) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -25,7 +27,7 @@ const About = (props: Props) => {
         whileInView={{ x: 0, opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 1.2 }}
-        src="/me.jpg"
+        src={urlFor(pageInfo.profilePic).url()}
         className="mt-16 xl:mt-10 w-56 h-56 rounded-full object-cover -mb-20 md:mb-0 md:rounded-lg md:w-64 md:h-80 xl:w-[380px] xl:h-[460px] flex-shrink-0"
       />
 
@@ -36,21 +38,7 @@ const About = (props: Props) => {
           background
         </h4>
         <p className="text-sm lg:text-base">
-          {des}
-          <br />
-          {des2}
-          <br />
-          {des3}
-          <br />
-          {/* <span className="text-lg font-medium text-gray-500 tracking-[7px]">
-            I Love do{" "}
-          </span>
-          <br />
-          #Coding <br />
-          #Learning <br />
-          #Reading <br />
-          #Typing <br />
-          #Researching */}
+          {pageInfo?.backgroundInformation}
         </p>
       </div>
     </motion.div>

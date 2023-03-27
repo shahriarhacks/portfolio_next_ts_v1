@@ -2,10 +2,13 @@ import React from "react";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { Social } from "@/typings";
 
-type Props = {};
+type Props = {
+  socials: Social[];
+};
 
-const Header = (props: Props) => {
+const Header = ({ socials }: Props) => {
   return (
     <header className="sticky top-0 flex items-start justify-between max-w-7xl mx-auto xl:items-center z-20 p-5">
       <motion.div
@@ -19,41 +22,14 @@ const Header = (props: Props) => {
         className="flex flex-row items-center"
       >
         {/* Social Icons */}
-        <SocialIcon
-          url="https://www.github.com/shahriar0ahmed"
-          fgColor="gray"
-          bgColor="transparent"
-        />{" "}
-        <SocialIcon
-          url="https://www.linkedin.com/in/shahriar0ahmed"
-          fgColor="gray"
-          bgColor="transparent"
-        />
-        {/* <SocialIcon
-          url="https://www.pinterest.com/shahriar7ahmed"
-          fgColor="gray"
-          bgColor="transparent"
-        />{" "}
-        <SocialIcon
-          url="https://www.medium.com/@shahriar7ahmed"
-          fgColor="gray"
-          bgColor="transparent"
-        />{" "} */}
-        <SocialIcon
-          url="https://www.facebook.com/shahriar0ahmed"
-          fgColor="gray"
-          bgColor="transparent"
-        />
-        {/* <SocialIcon
-          url="https://www.twitter.com/shahriar7ahmed"
-          fgColor="gray"
-          bgColor="transparent"
-        /> */}
-        <SocialIcon
-          url="https://www.instagram.com/shahriar0ahmed"
-          fgColor="gray"
-          bgColor="transparent"
-        />
+        {socials.map((social) => (
+          <SocialIcon
+            key={social?._id}
+            url={social?.url}
+            fgColor="gray"
+            bgColor="transparent"
+          />
+        ))}
       </motion.div>
       <motion.div
         initial={{

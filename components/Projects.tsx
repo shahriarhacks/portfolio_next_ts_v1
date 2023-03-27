@@ -1,11 +1,12 @@
 import React from "react";
 import Project from "./Project";
 import { motion } from "framer-motion";
+import { Project as ProjectType } from "@/typings";
+import Link from "next/link";
 
-type Props = {};
+type Props = { projects: ProjectType[] };
 
-const Projects = (props: Props) => {
-  const projects = [1, 2, 3, 4, 5];
+const Projects = ({ projects }: Props) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -18,7 +19,14 @@ const Projects = (props: Props) => {
       </h3>
       <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory scrollbar-thin scrollbar-track-gray-400/30 scrollbar-thumb-green-300/40 z-20">
         {projects.map((project, i) => (
-          <Project key={i} />
+          <Link href={project?.linkBuild} key={project?._id}>
+            <Project
+              key={project?._id}
+              project={project}
+              i={i + 1}
+              length={projects.length}
+            />
+          </Link>
         ))}
       </div>
       <div className="w-full absolute top-[30%] bg-[#475841]/30 left-0 h-[400px] -skew-y-12" />
