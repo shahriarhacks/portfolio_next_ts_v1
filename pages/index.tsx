@@ -9,7 +9,6 @@ import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Link from "next/link";
 import { GetStaticProps } from "next";
-import { type } from "os";
 import { Experience, PageInfo, Project, SKill, Social } from "@/typings";
 import { fetchPageInfo } from "@/utils/fetchPageInfo";
 import { fetchExperiences } from "@/utils/fetchExperiences";
