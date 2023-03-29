@@ -26,6 +26,7 @@ const ExperienceCard = ({ experience }: Props) => {
               className="w-10 h-10 rounded-full"
               key={tech?._id}
               src={urlFor(tech?.image).url()}
+              alt={''}
             />
           ))}
         </div>

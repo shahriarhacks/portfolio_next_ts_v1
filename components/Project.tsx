@@ -35,6 +35,7 @@ const Project = ({ project, i, length }: Props) => {
               className="h-6 w-6 rounded-full"
               key={tech?._id}
               src={urlFor(tech?.image).url()}
+              alt={''}
             />
           ))}
         </div>
